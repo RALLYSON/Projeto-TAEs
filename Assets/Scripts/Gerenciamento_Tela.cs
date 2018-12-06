@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gerenciamento_Tela : MonoBehaviour {
     public Canvas tela_home;
@@ -27,6 +28,7 @@ public class Gerenciamento_Tela : MonoBehaviour {
     }
     public void Ativar_Tela(string nome_tela)
     {
+        print(nome_tela);
         tela_home.enabled = false;
         tela_atividades.enabled = false;
         tela_ajuda.enabled = false;
@@ -52,7 +54,8 @@ public class Gerenciamento_Tela : MonoBehaviour {
                 tela_escolha_persona.enabled = true;
                 break;
             case "atividades_sala_aula":
-                tela_atividades_sala_aula.enabled = true;
+                //tela_atividades_sala_aula.enabled = true;
+                SceneManager.LoadScene("SalaDeAula");
                 break;
         }  
         Debug.Log("Ativar_Tela_Atividaddes " + nome_tela);

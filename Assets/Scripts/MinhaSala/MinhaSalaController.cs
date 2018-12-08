@@ -58,15 +58,36 @@ public class MinhaSalaController : MonoBehaviour {
 
     public void ScreenshotBt()
     {
+        StartCoroutine(CaptureScreen());
+    }
+
+   
+    public IEnumerator CaptureScreen()
+    {
+        // Wait till the last possible moment before screen rendering to hide the UI
+        yield return null;
         int id = 0;
-        if (PlayerPrefs.HasKey("screenshotID"))
+        if (PlayerPrefs.HasKey("screenshotID")) // busca o valor da variavel screenshotID nas preferencias do usuario (como se fosse um mini ''banco de dados do jogo'')
         {
             id = PlayerPrefs.GetInt("screenshotID");
             id++;
         }
-        ScreenCapture.CaptureScreenshot("C:/Users/ivostinghen/Desktop/MinhaSala " + id + ".png");
-        PlayerPrefs.SetInt("screenshotID", id);
-        PlayerPrefs.Save();
+
+        //ScreenCapture.CaptureScreenshot("C:/Users/ivostinghen/Desktop/MinhaSala " + id + ".png");
+      
+
+        GameObject.Find("Canvas_Tela_SalaDeAula").GetComponent<Canvas>().enabled = false;
+
+        // Wait for screen rendering to complete
+        yield return new WaitForEndOfFrame();
+
+        // Take screenshot
+        ScreenCapture.CaptureScreenshot("MinhaSala " + id + ".png");
+        PlayerPrefs.SetInt("screenshotID", id); //altera a variavel nas preferencias do usuario
+        PlayerPrefs.Save(); //salva as alterações do ''mini banco de dados  do jogo''
+
+        // Show UI after we're done
+        GameObject.Find("Canvas_Tela_SalaDeAula").GetComponent<Canvas>().enabled = true;
     }
 
 

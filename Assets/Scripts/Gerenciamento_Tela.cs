@@ -24,7 +24,7 @@ public class Gerenciamento_Tela : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Update");
+        //Debug.Log("Update");
     }
     public void Ativar_Tela(string nome_tela)
     {

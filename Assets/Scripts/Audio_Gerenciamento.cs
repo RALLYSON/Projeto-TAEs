@@ -4,26 +4,13 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
-    //public string nome;
     public AudioClip clip;
     private AudioSource source;
     public void SetSource (AudioSource _source)
     {
         source = _source;
         source.clip = clip;
-
     }
-    //public void Play()
-    //{
-    //    source.Play();
-
-    //}
-    //public void Stop()
-    //{
-    //    source.Stop();
-
-    //}
-
 }
 public class Audio_Gerenciamento : MonoBehaviour {
     [SerializeField]
@@ -47,14 +34,13 @@ public class Audio_Gerenciamento : MonoBehaviour {
 
 	public void PlaySoundButton( string _nome)
     {
-        if(tocandoSom)  //se o som está tocando (ativado) ele para o som
+        if(tocandoSom)  //se o som está tocando (ativado) ele pausa o som
         {
             PauseSom(_nome);
             return;
         }
         TocarSom(_nome); // se o som não esta tocando , ele da play
         
-        //Debug.LogWarning(" (Audio Gerenciamento.PlaySound) Audio não encontrado !");
     }
 
     public void TocarSom(string _nome)
@@ -81,10 +67,6 @@ public class Audio_Gerenciamento : MonoBehaviour {
                 return;
             }
         }
-        Debug.LogWarning(" (Audio Gerenciamento.StopSound) Audio não encontrado!");
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
+   
 }

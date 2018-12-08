@@ -8,7 +8,7 @@ public class Item : MonoBehaviour {
     private Vector3 offset;
     public int layer;
 
-    void OnMouseDown()
+    void OnMouseDown()  // mouse está clicando no objeto selecionado
     {
         GetComponent<SpriteRenderer>().sortingOrder = layer;
 
@@ -17,13 +17,13 @@ public class Item : MonoBehaviour {
 
     }
 
-    void OnMouseDrag()
+    void OnMouseDrag()  //usuario está arrastando o objeto, escolhendo em que parte da cena ele quer inserir 
     {
-        if (GameObject.Find("FundoDeSelecao")) GameObject.Find("FundoDeSelecao").SetActive(false);
+        if (GameObject.Find("FundoDeSelecao")) GameObject.Find("FundoDeSelecao").SetActive(false);  //remve fundo cinza de seleção
 
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;  //movimenta o objeto
         transform.position = curPosition;
     }
 

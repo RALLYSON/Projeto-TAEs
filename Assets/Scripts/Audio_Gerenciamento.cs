@@ -16,14 +16,14 @@ public class Audio_Gerenciamento : MonoBehaviour {
     [SerializeField]
     Sound[] sounds;
     bool tocandoSom;
-    AudioSource[] audioSources;
-    // Use this for initialization
+    AudioSource[] audioSources; //vetor de audiosources
+
     void Start () {
         audioSources = new AudioSource[sounds.Length];
         tocandoSom = true;
 		for(int i=0; i < sounds.Length; i++)
         {
-            GameObject obj = new GameObject("Sound_" + i + "_" + sounds[i].clip.name);
+            GameObject obj = new GameObject("Sound_" + i + "_" + sounds[i].clip.name);  //lê o nome original do audio
             obj.transform.SetParent(this.transform);
             sounds[i].SetSource(obj.AddComponent<AudioSource>());
             audioSources[i] = obj.GetComponent<AudioSource>();

@@ -6,14 +6,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.IO;
 public class MinhaSalaController : MonoBehaviour {
-    // [HideInInspector] 
-    // public bool segurandoItem;
+ 
     public GameObject fundoSelecao;
     public GameObject menuSelecao;
     public GameObject posicioneMenu;
     public GameObject ultimoSelecionado;
 
-	public void Pressed()
+	public void Pressed()   // quando clica em escolher um item
 	{
 		Transform obj = EventSystem.current.currentSelectedGameObject.transform;	//Objeto clicado
 		string objName = obj.GetChild(0).GetComponent<Image>().sprite.name;    //recebo da figura
@@ -38,7 +37,7 @@ public class MinhaSalaController : MonoBehaviour {
 
     }
 
-    public void CancelarBt()
+    public void CancelarBt()    //cancela a escolha do item
     {
         fundoSelecao.SetActive(false);
         posicioneMenu.SetActive(false);
@@ -48,18 +47,18 @@ public class MinhaSalaController : MonoBehaviour {
 
     }
 
-    public void VoltarBt()
+    public void VoltarBt()  //volta para o menu principal
     {
         SceneManager.LoadScene("MainMenu");
     }
 
 
-    public void ReiniciarBt()
+    public void ReiniciarBt()   //reinica a cena
     {
         SceneManager.LoadScene("SalaDeAula");
     }
 
-    public void OkBt()
+    public void OkBt()  //Botao de confirmar selecao do item
     {
         ultimoSelecionado.GetComponent<Animator>().enabled = false;
         ultimoSelecionado.transform.localScale = new Vector3(.5F, .5F, .5F);
@@ -69,35 +68,13 @@ public class MinhaSalaController : MonoBehaviour {
         posicioneMenu.SetActive(false);
         menuSelecao.SetActive(true);
     }
-    //private IEnumerator TakeScreenshotAndSave()
-    //{
-    //    //takingScreenshot = true;
-    //    //yield return new WaitForEndOfFrame();
-
-        
-    //    //takingScreenshot = false;
-    //}
+   
     public void ScreenshotBt()
     {
-        //int id = AtualizaPlayerPrefs();
         StartCoroutine(CaptureScreen());
-
     }
 
-    //int AtualizaPlayerPrefs()
-    //{
-    //    int id = 0;
-    //    if (PlayerPrefs.HasKey("screenshotID")) // busca o valor da variavel screenshotID nas preferencias do usuario (como se fosse um mini ''banco de dados do jogo'')
-    //    {
-    //        id = PlayerPrefs.GetInt("screenshotID");
-    //        id++;
-    //    }
-    //    PlayerPrefs.SetInt("screenshotID", id); //altera a variavel nas preferencias do usuario
-    //    PlayerPrefs.Save(); //salva as alterações do ''mini banco de dados  do jogo''
-    //    return id;
-    //}
-
-    public IEnumerator CaptureScreen()
+    public IEnumerator CaptureScreen()  // Faz a captura de tela
     {
         GameObject.Find("Canvas_Tela_SalaDeAula").GetComponent<Canvas>().enabled = false;
         yield return new WaitForEndOfFrame();

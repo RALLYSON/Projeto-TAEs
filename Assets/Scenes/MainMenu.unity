@@ -4246,6 +4246,7 @@ GameObject:
   - component: {fileID: 640029578}
   - component: {fileID: 640029577}
   - component: {fileID: 640029576}
+  - component: {fileID: 640029579}
   m_Layer: 5
   m_Name: Botao_Som
   m_TagString: Untagged
@@ -4309,7 +4310,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 640029577}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1649762377}
+        m_MethodName: PlaySoundButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fur_Elise
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &640029577
@@ -4346,6 +4358,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 640029574}
   m_CullTransparentMesh: 1
+--- !u!114 &640029579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640029574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c1ccb98db12a448b07f213343e65d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgAtivado: {fileID: 21300000, guid: b45b9db0f96750f42bc18527ee35f1d7, type: 3}
+  imgDesativado: {fileID: 21300000, guid: 32a405afe2285284b81498247d862ef5, type: 3}
 --- !u!1 &648409560
 GameObject:
   m_ObjectHideFlags: 0
@@ -7671,6 +7696,7 @@ GameObject:
   - component: {fileID: 1252173706}
   - component: {fileID: 1252173705}
   - component: {fileID: 1252173704}
+  - component: {fileID: 1252173707}
   m_Layer: 5
   m_Name: Botao_Som
   m_TagString: Untagged
@@ -7736,7 +7762,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1649762377}
-        m_MethodName: PlaySound
+        m_MethodName: PlaySoundButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7782,6 +7808,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252173702}
   m_CullTransparentMesh: 1
+--- !u!114 &1252173707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252173702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c1ccb98db12a448b07f213343e65d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgAtivado: {fileID: 21300000, guid: b45b9db0f96750f42bc18527ee35f1d7, type: 3}
+  imgDesativado: {fileID: 21300000, guid: 32a405afe2285284b81498247d862ef5, type: 3}
 --- !u!1 &1266177019
 GameObject:
   m_ObjectHideFlags: 0
@@ -11091,9 +11130,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlaySoundButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1967273976311230, guid: 485f095f1629db94d8b0162656405766, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485f095f1629db94d8b0162656405766, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1659333493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967273976311230, guid: 485f095f1629db94d8b0162656405766,
+    type: 2}
+  m_PrefabInternal: {fileID: 1659333492}
+--- !u!114 &1659333494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659333493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c1ccb98db12a448b07f213343e65d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgAtivado: {fileID: 21300000, guid: b45b9db0f96750f42bc18527ee35f1d7, type: 3}
+  imgDesativado: {fileID: 21300000, guid: 32a405afe2285284b81498247d862ef5, type: 3}
 --- !u!1 &1660103780
 GameObject:
   m_ObjectHideFlags: 0

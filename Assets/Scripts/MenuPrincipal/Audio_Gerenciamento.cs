@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 [System.Serializable]
 public class Sound
 {
@@ -32,9 +34,18 @@ public class Audio_Gerenciamento : MonoBehaviour {
         }
 	}
 
+
 	public void PlaySoundButton( string _nome)
     {
-        if(tocandoSom)  //se o som está tocando (ativado) ele pausa o som
+        GameObject bt = EventSystem.current.currentSelectedGameObject; //seleciona o botao que foi apertado
+        bt.GetComponent<AlternaUIBotao>().SetImgAtivado(!tocandoSom);    //alterna a imagem do botao
+
+
+        if (tocandoSom) PlayerPrefs.SetInt("volMusica", 0); //salva na configuracao da unity a decisao do volume da musica.
+        else PlayerPrefs.SetInt("volMusica", 1);
+        PlayerPrefs.Save();
+
+        if (tocandoSom)  //se o som está tocando (ativado) ele pausa o som
         {
             PauseSom(_nome);
             return;

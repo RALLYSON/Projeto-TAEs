@@ -26,6 +26,9 @@ public class Gerenciamento_Tela : MonoBehaviour {
 	void Update () {
         //Debug.Log("Update");
     }
+
+    
+
     public void Ativar_Tela(string nome_tela)
     {
         print(nome_tela);

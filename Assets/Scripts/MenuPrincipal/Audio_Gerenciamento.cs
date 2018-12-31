@@ -21,8 +21,16 @@ public class Audio_Gerenciamento : MonoBehaviour {
     AudioSource[] audioSources; //vetor de audiosources
 
     void Start () {
-        audioSources = new AudioSource[sounds.Length];
         tocandoSom = true;
+        if (PlayerPrefs.HasKey("volMusica"))
+        {
+            int vol = PlayerPrefs.GetInt("volMusica");
+            if (vol == 1) tocandoSom = true;
+            else tocandoSom = false;
+        }
+        
+
+        audioSources = new AudioSource[sounds.Length];
 		for(int i=0; i < sounds.Length; i++)
         {
             GameObject obj = new GameObject("Sound_" + i + "_" + sounds[i].clip.name);  //lê o nome original do audio
@@ -30,7 +38,7 @@ public class Audio_Gerenciamento : MonoBehaviour {
             sounds[i].SetSource(obj.AddComponent<AudioSource>());
             audioSources[i] = obj.GetComponent<AudioSource>();
             obj.GetComponent<AudioSource>().loop = true;
-            obj.GetComponent<AudioSource>().Play();
+            if(tocandoSom)obj.GetComponent<AudioSource>().Play();
         }
 	}
 

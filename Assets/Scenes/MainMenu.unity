@@ -6833,7 +6833,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Verde
       m_Image: {fileID: 0}
-    - m_Text: Amarelo
+    - m_Text: Branco
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

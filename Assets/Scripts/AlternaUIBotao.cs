@@ -9,10 +9,19 @@ public class AlternaUIBotao : MonoBehaviour {
 
     public void Start()
     {
+        CheckPrefabs();
+    }
+    public void OnEnable()
+    {
+        CheckPrefabs();
+    }
+
+    public void CheckPrefabs()
+    {
         try
         {
             int vol = PlayerPrefs.GetInt("volMusica");
-            if(vol==1)SetImgAtivado(true);
+            if (vol == 1) SetImgAtivado(true);
             else SetImgAtivado(false);
         }
         catch
@@ -20,7 +29,6 @@ public class AlternaUIBotao : MonoBehaviour {
             Debug.Log("Variavel não setada ainda.");
         }
     }
-
     public void SetImgAtivado(bool decisao)
     {
         if(decisao)GetComponent<Image>().sprite = imgAtivado;

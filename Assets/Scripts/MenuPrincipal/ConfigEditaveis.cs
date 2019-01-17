@@ -10,10 +10,6 @@ public class ConfigEditaveis : MonoBehaviour {
     {
         string option = dropDown.options[dropDown.value].text;
         PlayerPrefs.SetString("color", option);
-        print(option);
-        print(dropDown.value);
-        print("AAAAAAAAAAAA");
-
         PlayerPrefs.SetInt("color_ID", dropDown.value);
         PlayerPrefs.Save();
         CheckColor.instance.ApplySavedColor();
@@ -24,7 +20,11 @@ public class ConfigEditaveis : MonoBehaviour {
         string option = dropDown.options[dropDown.value].text;
         PlayerPrefs.SetString("music", option);
         PlayerPrefs.SetInt("music_ID", dropDown.value);
+        PlayerPrefs.SetInt("volMusica", 1);
         PlayerPrefs.Save();
+        GameObject.Find("Botao_Som").GetComponent<AlternaUIBotao>().CheckPrefabs();
+        GetComponent<CheckMusic>().ApplySavedMusic();
+
     }
 
     public void SetFontSize(Dropdown dropDown)

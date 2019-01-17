@@ -3489,7 +3489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &461107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9312,7 +9312,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: drawing
+          m_StringArgument: atividades_braindraw
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -10796,6 +10796,7 @@ MonoBehaviour:
   tela_configuracoes: {fileID: 1865281283}
   tela_escolha_persona: {fileID: 758437837}
   tela_atividades_sala_aula: {fileID: 1789922816}
+  tela_atividades_braindraw: {fileID: 0}
 --- !u!4 &1649762376
 Transform:
   m_ObjectHideFlags: 0
@@ -13213,7 +13214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1865281284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14273,6 +14274,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1967273976311230, guid: 485f095f1629db94d8b0162656405766, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376869036628352, guid: 485f095f1629db94d8b0162656405766,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

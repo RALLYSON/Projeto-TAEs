@@ -10,16 +10,19 @@ public class Gerenciamento_Tela : MonoBehaviour {
     public GameObject tela_configuracoes;
     public GameObject tela_escolha_persona;
     public GameObject tela_atividades_sala_aula;
+    public GameObject tela_atividades_braindraw;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         tela_home.SetActive(true);
         tela_atividades.SetActive(false);
         tela_ajuda.SetActive(false);
         tela_configuracoes.SetActive(false);
         tela_escolha_persona.SetActive(false);
         tela_atividades_sala_aula.SetActive(false);
-        Debug.Log("Start");
+        tela_atividades_braindraw.SetActive(false);
+
+    Debug.Log("Start");
     }
 	
 	// Update is called once per frame
@@ -37,7 +40,7 @@ public class Gerenciamento_Tela : MonoBehaviour {
         tela_ajuda.SetActive(false);
         tela_configuracoes.SetActive(false);
         tela_escolha_persona.SetActive(false);
-        tela_atividades_sala_aula.SetActive(false);
+
         Debug.Log("Ativar_Tela_Atividaddes");
         switch (nome_tela)
         {
@@ -55,11 +58,14 @@ public class Gerenciamento_Tela : MonoBehaviour {
                 break;
             case "escolha_persona":
                 tela_escolha_persona.SetActive(true);
-
                 break;
             case "atividades_sala_aula":
                 //tela_atividades_sala_aula.enabled = true;
                 SceneManager.LoadScene("SalaDeAula");
+                break;
+            case "atividades_braindraw":
+                //tela_atividades_sala_aula.enabled = true;
+                SceneManager.LoadScene("Braindraw");
                 break;
         }  
         Debug.Log("Ativar_Tela_Atividaddes " + nome_tela);

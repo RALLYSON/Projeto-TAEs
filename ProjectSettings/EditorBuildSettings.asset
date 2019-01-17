@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/SalaDeAula.unity
     guid: 8cf7da5b4e330e24eb5c0b861f47c7c8
+  - enabled: 1
+    path: Assets/Scenes/Braindraw.unity
+    guid: 16013cb228fc9054e82574df1711370c
+  - enabled: 1
+    path: Assets/Scenes/Braindraw-Gameplay.unity
+    guid: 3aad1788aa688d74a92553645b3333c5
   m_configObjects: {}

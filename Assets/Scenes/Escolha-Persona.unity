@@ -1103,44 +1103,50 @@ MonoBehaviour:
     - layer: 3
       sprite: {fileID: 21300000, guid: c2618e9e3f4a9e74d854a0cf1fe3abde, type: 3}
       rectY: 89
-      id: Body
-    type: Body
+      characterPos: 0
+    type: 1
+  - items:
+    - layer: 3
+      sprite: {fileID: 21300000, guid: 1284021a851589f468ef0be3615be329, type: 3}
+      rectY: 89
+      characterPos: 0
+    type: 1
   hairPrefabs:
   - items:
     - layer: 6
       sprite: {fileID: 21300000, guid: 37a5b194de90b874cb4664c76165695f, type: 3}
       rectY: 336
-      id: HairM
-    type: Hair
+      characterPos: 1
+    type: 0
   - items:
     - layer: 6
       sprite: {fileID: 21300000, guid: bd64c6d3051af174aa9e6a1010120a0c, type: 3}
       rectY: 336
-      id: HairM
-    type: Hair
+      characterPos: 1
+    type: 0
   - items:
     - layer: 0
       sprite: {fileID: 21300000, guid: cc2342c3782c10340a36841003775ca2, type: 3}
       rectY: -15
-      id: HairF1
+      characterPos: 2
     - layer: 7
       sprite: {fileID: 21300000, guid: 43b5af4bb7bae1642a1af1ae78132e0c, type: 3}
       rectY: 278
-      id: HairF2
-    type: Hair
+      characterPos: 3
+    type: 0
   clothesPrefabs:
   - items: []
-    type: 
+    type: 0
   - items: []
-    type: 
+    type: 0
   - items: []
-    type: 
+    type: 0
   - items: []
-    type: 
+    type: 0
   - items: []
-    type: 
+    type: 0
   - items: []
-    type: 
+    type: 0
   panelTypeImgs:
   - {fileID: 69162782}
   - {fileID: 1226147317}
@@ -1367,7 +1373,7 @@ MonoBehaviour:
   bt: {fileID: 625083355}
   itemGroup:
     items: []
-    type: 
+    type: 0
 --- !u!1 &666797052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &666797053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1453,7 +1459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &827020943
 RectTransform:
   m_ObjectHideFlags: 0

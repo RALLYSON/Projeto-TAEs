@@ -6,5 +6,5 @@ using UnityEngine;
 public class ItemGroup 
 {
     public ItemData[] items;
-    public string type;
+    public TypeOfSlot type;
 }

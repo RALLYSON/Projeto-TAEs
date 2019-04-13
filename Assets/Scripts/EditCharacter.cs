@@ -119,8 +119,8 @@ public class EditCharacter : MonoBehaviour {
         for (int i = 0; i < itemGroup.items.Length; i++)
         {
             //Transform slot = Instantiate(slotPrefab.transform.GetChild(0), bodyParts.transform);
-            int charPartID = CharSlotsDictionary.characterPosition[itemGroup.items[i].id];
-
+            //int charPartID = CharSlotsDictionary.characterPosition[itemGroup.items[i].id];
+            int charPartID = itemGroup.items[i].characterPos.GetHashCode();
             Transform slot = Instantiate(panelTypeImgs[charPartID].transform, bodyParts.transform);
             slot.GetComponent<Image>().sprite = itemGroup.items[i].sprite;
             //panelTypeImgs[charPartID].sprite = item.sprite;
@@ -129,7 +129,7 @@ public class EditCharacter : MonoBehaviour {
             pos.y = itemGroup.items[i].rectY;
             slot.GetComponent<RectTransform>().localPosition = pos;
             slot.SetSiblingIndex(itemGroup.items[i].layer);
-            slot.tag = itemGroup.type.ToString() +"Equipped";
+            slot.tag = itemGroup.type.ToString() + "Equipped";
             slot.gameObject.SetActive(true);
         }
 

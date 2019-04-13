@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CheckMusic : MonoBehaviour
 {
-
-
     public static CheckMusic instance;
 
     private void Awake()
@@ -27,8 +25,11 @@ public class CheckMusic : MonoBehaviour
             return;
         }
         GetComponent<AudioSource>().clip = Resources.Load("Audio/" + "Musica"+musicID.ToString()) as AudioClip;
-        if (PlayerPrefs.GetInt("volMusica") == 1) GetComponent<AudioSource>().Play();
-        else GetComponent<AudioSource>().Play();
+
+        if (PlayerPrefs.GetInt("volMusica") == 1)
+            GetComponent<AudioSource>().Play();
+        else
+            GetComponent<AudioSource>().Pause();
        
     }
 

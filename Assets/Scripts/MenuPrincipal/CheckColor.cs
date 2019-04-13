@@ -20,8 +20,6 @@ public class CheckColor : MonoBehaviour {
         try
         {
             color = PlayerPrefs.GetString("color");
-            print(color);
-
         }
         catch
         {

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class BraindrawSelectionScreen : MonoBehaviour {
 
 	public void SelectButton(string imgName)
     {
-        PlayerPrefs.SetString("image",imgName);
+        PlayerPrefs.SetInt("image",DrawTemplates.templatesDict[imgName]);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Braindraw-Gameplay");
+        ScreenFlow.Instance.LoadNextScene("Braindraw-Gameplay");
     }
 
     public void Voltar()
     {
-        SceneManager.LoadScene("MainMenu");
+        ScreenFlow.Instance.LoadPreviousScene();
     }
 }

@@ -2683,7 +2683,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: POSICIONE SEU OBJETO NA CENA
+  m_Text: ARRASTE SEU OBJETO NA CENA
 --- !u!222 &804493134
 CanvasRenderer:
   m_ObjectHideFlags: 0

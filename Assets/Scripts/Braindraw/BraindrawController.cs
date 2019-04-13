@@ -1,33 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BraindrawController : MonoBehaviour {
-    void Start()
+    public Text widthText;
+    public Sprite[] templates;
+    public SpriteRenderer templateRenderer;
+
+    private void Awake()
     {
-        Renderer rend = GetComponent<Renderer>();
-        // duplicate the original texture and assign to the material
-        Texture2D texture = Instantiate(rend.material.mainTexture) as Texture2D;
-        rend.material.mainTexture = texture;
-
-        // colors used to tint the first 3 mip levels
-        Color[] colors = new Color[3];
-        colors[0] = Color.red;
-        colors[1] = Color.green;
-        colors[2] = Color.blue;
-        int mipCount = Mathf.Min(3, texture.mipmapCount);
-
-        // tint each mip level
-        for (int mip = 0; mip < mipCount; ++mip)
-        {
-            Color[] cols = texture.GetPixels(mip);
-            for (int i = 0; i < cols.Length; ++i)
-            {
-                cols[i] = Color.Lerp(cols[i], colors[mip], 0.33f);
-            }
-            texture.SetPixels(cols, mip);
-        }
-        // actually apply all SetPixels, don't recalculate mip levels
-        texture.Apply(false);
+        int imgID = PlayerPrefs.GetInt("image");
+        if (imgID == -1)
+            templateRenderer.sprite = null;
+        else
+            templateRenderer.sprite = templates[imgID];
     }
+
+    public void ChangeText(string newTxt) => widthText.text = newTxt;
+
+    public void EnableUIObject(GameObject obj) => obj.SetActive(true);
+
+    public void DisableUIObject(GameObject obj) => obj.SetActive(false);
+   
+
 }

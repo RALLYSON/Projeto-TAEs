@@ -49,13 +49,13 @@ public class MinhaSalaController : MonoBehaviour {
 
     public void VoltarBt()  //volta para o menu principal
     {
-        SceneManager.LoadScene("MainMenu");
+        ScreenFlow.Instance.LoadPreviousScene();
     }
 
 
     public void ReiniciarBt()   //reinica a cena
     {
-        SceneManager.LoadScene("SalaDeAula");
+        ScreenFlow.Instance.RestartScene();
     }
 
     public void OkBt()  //Botao de confirmar selecao do item

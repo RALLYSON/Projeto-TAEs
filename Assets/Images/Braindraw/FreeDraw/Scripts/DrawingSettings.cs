@@ -10,7 +10,6 @@ namespace FreeDraw
     {
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
-
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
         public void SetMarkerColour(Color new_color)
         {
@@ -18,7 +17,7 @@ namespace FreeDraw
         }
         // new_width is radius in pixels
         public void SetMarkerWidth(int new_width)
-        {
+        { 
             Drawable.Pen_Width = new_width;
         }
         public void SetMarkerWidth(float new_width)
@@ -36,67 +35,35 @@ namespace FreeDraw
 
 
         // Call these these to change the pen settings
-        public void SetMarkerRed()
+        public void SetMarker(string color)
         {
-            Color c = Color.red;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerGreen()
-        {
-            Color c = Color.green;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerBlue()
-        {
-            Color c = Color.blue;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerYellow()
-        {
-            Color c = Color.yellow;
+            Color c = new Color();
+            if (color == ColorEnum.Black.ToString())
+                c = Color.black;
+            else if (color == ColorEnum.Red.ToString())
+                c = Color.red;
+            else if (color == ColorEnum.Yellow.ToString())
+                c = Color.yellow;
+            else if (color == ColorEnum.Blue.ToString())
+                c = Color.blue;
+            else if (color == ColorEnum.Green.ToString())
+                c = Color.green;
+            else if (color == ColorEnum.Orange.ToString())
+                c = new Color(1, .6F, .2F);
+            else if (color == ColorEnum.Purple.ToString())
+                c = new Color(.8F, .3F, .8F);
+
             c.a = Transparency;
             SetMarkerColour(c);
             Drawable.drawable.SetPenBrush();
         }
 
-        public void SetMarkerBlack()
-        {
-            Color c = Color.black;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
 
-        public void SetMarkerOrange()
-        {
-            Color c = new Color(1, .6F, .2F);
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-
-        public void SetMarkerPurple()
-        {
-            Color c = new Color(.8F, .3F,.8F);
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-
-        public void SetEraser()
-        {
-            SetMarkerColour(new Color(255f, 255f, 255f, 255f));
-        }
-
-        public void PartialSetEraser()
-        {
-            SetMarkerColour(new Color(255f, 255f, 255f, 0.5f));
-        }
+        public void SetEraser() => SetMarkerColour(Color.white);
+    
+        //public void PartialSetEraser()
+        //{
+        //    SetMarkerColour(new Color(255f, 255f, 255f, 0.5f));
+        //}
     }
 }

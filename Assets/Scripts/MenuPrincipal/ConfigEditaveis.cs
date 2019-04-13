@@ -23,7 +23,7 @@ public class ConfigEditaveis : MonoBehaviour {
         PlayerPrefs.SetInt("volMusica", 1);
         PlayerPrefs.Save();
         GameObject.Find("Botao_Som").GetComponent<AlternaUIBotao>().CheckPrefabs();
-        GetComponent<CheckMusic>().ApplySavedMusic();
+        GameObject.Find("MainAudio").GetComponent<CheckMusic>().ApplySavedMusic();
 
     }
 

@@ -9,13 +9,30 @@ public class CheckDropdown : MonoBehaviour {
 
     private void OnEnable()
     {
-        try
+        if (PlayerPrefs.HasKey("color_ID"))
         {
             menuColor.value = PlayerPrefs.GetInt("color_ID");
+        }
+        if (PlayerPrefs.HasKey("music_ID"))
+        {
             menuMusic.value = PlayerPrefs.GetInt("music_ID");
+        }
+        if (PlayerPrefs.HasKey("fontSize_ID"))
+        {
             menuFontSize.value = PlayerPrefs.GetInt("fontSize_ID");
         }
-        catch { }
-       
+
+
+        //try
+        //{
+        //    menuColor.value = PlayerPrefs.GetInt("color_ID");
+        //    menuMusic.value = PlayerPrefs.GetInt("music_ID");
+        //    menuFontSize.value = PlayerPrefs.GetInt("fontSize_ID");
+        //}
+        //catch
+        //{
+
+        //}
+
     }
 }

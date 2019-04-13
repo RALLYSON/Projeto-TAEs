@@ -18,14 +18,6 @@ public class AlternaUIBotao : MonoBehaviour {
         audioSource = GameObject.Find("MainAudio").GetComponent<AudioSource>();
         CheckPrefabs();
 
-        if (PlayerPrefs.HasKey("volMusica"))
-        {
-            int vol = PlayerPrefs.GetInt("volMusica");
-            if (vol == 1)
-                audioSource.Play();
-        }
-        else
-            audioSource.Stop();
     }
 
     public void CheckPrefabs()
@@ -33,8 +25,15 @@ public class AlternaUIBotao : MonoBehaviour {
         try
         {
             int vol = PlayerPrefs.GetInt("volMusica");
-            if (vol == 1) SetImgAtivado(true);
-            else SetImgAtivado(false);
+            if (vol == 1)
+            {
+                if(!audioSource.isPlaying)audioSource.Play();
+
+            }
+            else
+                audioSource.Pause();
+
+            SetImgAtivado(audioSource.isPlaying);
         }
         catch
         {

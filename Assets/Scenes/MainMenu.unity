@@ -1396,12 +1396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c87575dd94e1984da41016a759386ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tela_home: {fileID: 709262251}
-  tela_atividades: {fileID: 0}
-  tela_ajuda: {fileID: 0}
-  tela_configuracoes: {fileID: 0}
-  tela_escolha_persona: {fileID: 0}
-  tela_atividades_sala_aula: {fileID: 0}
 --- !u!4 &1649762376
 Transform:
   m_ObjectHideFlags: 0
@@ -1655,7 +1649,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b45b9db0f96750f42bc18527ee35f1d7,
+      objectReference: {fileID: 21300000, guid: 32a405afe2285284b81498247d862ef5,
         type: 3}
     - target: {fileID: 114376869036628352, guid: 485f095f1629db94d8b0162656405766,
         type: 2}
@@ -1670,6 +1664,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114282766613938826, guid: 485f095f1629db94d8b0162656405766,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485f095f1629db94d8b0162656405766, type: 2}

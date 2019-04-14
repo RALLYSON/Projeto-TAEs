@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Gerenciamento_Tela : MonoBehaviour {
-
+    
     public void Ativar_Tela(string nome_tela)
     {
         switch (nome_tela)

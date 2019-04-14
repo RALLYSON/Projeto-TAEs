@@ -10,7 +10,7 @@ public class BraindrawSelectionScreen : MonoBehaviour {
     {
         PlayerPrefs.SetInt("image",DrawTemplates.templatesDict[imgName]);
         PlayerPrefs.Save();
-        ScreenFlow.Instance.LoadNextScene("Braindraw-Gameplay");
+        ScreenFlow.Instance.LoadNextScene("Braindraw Gameplay");
     }
 
     public void Voltar()

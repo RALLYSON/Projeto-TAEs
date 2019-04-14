@@ -15,7 +15,6 @@ public class CheckColor : MonoBehaviour {
 
     public void ApplySavedColor()
     {
-        print("ttttttttt");
         string color = "";
         try
         {
@@ -25,7 +24,6 @@ public class CheckColor : MonoBehaviour {
         {
             return;
         }
-        print(color);
         if (color.Equals("Rosa")) Camera.main.backgroundColor = new Color32(255, 182, 193,255);
         else if (color.Equals("Azul")) Camera.main.backgroundColor = new Color32(153, 208, 255,255);
         else if (color.Equals("Verde")) Camera.main.backgroundColor = new Color32(143, 238, 78, 255);

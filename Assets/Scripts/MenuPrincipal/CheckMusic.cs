@@ -18,7 +18,6 @@ public class CheckMusic : MonoBehaviour
         try
         {
             musicID = PlayerPrefs.GetInt("music_ID");
-            print(musicID);
         }
         catch
         {

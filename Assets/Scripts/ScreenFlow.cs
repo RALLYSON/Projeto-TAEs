@@ -1,38 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScreenFlow : MonoBehaviour
 {
     public static ScreenFlow Instance;
     private int lastID = 0;
+    public GameObject sceneBtPrefab;
+    public Transform panelParent;
 
-    public class SceneData
-    {
-        public string name;
-        public int id;
-
-        public SceneData(string name, int id)
-        {
-            this.name = name;
-            this.id = id;
-        }
-    }
+    
 
     public List<SceneData> scenes = new List<SceneData>();
-
-    void OnEnable()
-    {
-        Debug.Log("OnEnable called");
-        //SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    //// called second
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //    Debug.Log("OnSceneLoaded: " + scene.name);
-    //    Debug.Log(mode);
-    //}
+    public List<GameObject> scenesBt = new List<GameObject>();
 
     public void Awake()
     {
@@ -50,7 +31,11 @@ public class ScreenFlow : MonoBehaviour
         scenes.Add(
                 new SceneData(sceneName, lastID)
             );
-        print(lastID);
+        GameObject bt = Instantiate(sceneBtPrefab, panelParent);
+        bt.transform.GetChild(0).GetComponent<Text>().text = sceneName;
+        bt.gameObject.name = sceneName;
+        scenesBt.Add(bt);
+        print(scenes[scenes.Count - 1].sceneName);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -58,7 +43,23 @@ public class ScreenFlow : MonoBehaviour
     {
         lastID--;
         scenes.RemoveAt(scenes.Count-1);
-        SceneManager.LoadScene(scenes[scenes.Count - 1].name);
+        GameObject bt = scenesBt[scenesBt.Count - 1];
+        scenesBt.Remove(bt);
+        Destroy(bt);
+        SceneManager.LoadScene(scenes[scenes.Count - 1].sceneName);
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if(level == 7)
+        {
+            panelParent.gameObject.SetActive(false);
+        }
+        else
+        {
+            panelParent.gameObject.SetActive(true);
+
+        }
     }
 
     public void RestartScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);

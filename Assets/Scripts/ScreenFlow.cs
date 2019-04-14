@@ -51,7 +51,7 @@ public class ScreenFlow : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if(level == 7)
+        if(level == 7 || level == 5 || level == 8) //LISTA DE CENA QUE NAO APARECEM O PAINEL
         {
             panelParent.gameObject.SetActive(false);
         }

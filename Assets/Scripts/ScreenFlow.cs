@@ -35,7 +35,6 @@ public class ScreenFlow : MonoBehaviour
         bt.transform.GetChild(0).GetComponent<Text>().text = sceneName;
         bt.gameObject.name = sceneName;
         scenesBt.Add(bt);
-        print(scenes[scenes.Count - 1].sceneName);
         SceneManager.LoadScene(sceneName);
     }
 

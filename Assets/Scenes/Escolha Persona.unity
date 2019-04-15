@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3969fbcb273381442a883f6afcab8c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charInScene: {fileID: 1277419481}
+  charInScene: {fileID: 936002562}
   characterPrefab: {fileID: 224264502395801748, guid: aa4a02df9066f6e4ba4efc721a5280d5,
     type: 2}
   grid: {fileID: 496443076}
@@ -740,7 +740,7 @@ MonoBehaviour:
     - layer: 3
       sprite: {fileID: 21300000, guid: 1284021a851589f468ef0be3615be329, type: 3}
       rectY: 133.2
-      characterPos: 0
+      characterPos: 4
     type: 1
   hairPrefabs:
   - items:
@@ -770,6 +770,7 @@ MonoBehaviour:
   - {fileID: 1107545854}
   - {fileID: 729863575}
   - {fileID: 1173531928}
+  - {fileID: 626893844}
 --- !u!1 &496443076
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +992,12 @@ MonoBehaviour:
   itemGroup:
     items: []
     type: 0
+--- !u!114 &626893844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114077955895188638, guid: 184f87bfc3c3a1a46b6c4011c3441943,
+    type: 2}
+  m_PrefabInternal: {fileID: 2049857294}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &655751427
 Prefab:
   m_ObjectHideFlags: 0
@@ -1036,7 +1043,7 @@ Prefab:
     - target: {fileID: 224540216018239884, guid: fa24cb856db0669439f878cb1a39bb25,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224540216018239884, guid: fa24cb856db0669439f878cb1a39bb25,
         type: 2}
@@ -1251,7 +1258,7 @@ Prefab:
     - target: {fileID: 224488265157853882, guid: 389be7d56c62d5f4587e5c1268292a69,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224488265157853882, guid: 389be7d56c62d5f4587e5c1268292a69,
         type: 2}
@@ -1421,7 +1428,7 @@ Prefab:
     - target: {fileID: 224570745702574592, guid: fe65ec71e07920c46b5cb2974b8743c6,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224570745702574592, guid: fe65ec71e07920c46b5cb2974b8743c6,
         type: 2}
@@ -1699,14 +1706,14 @@ RectTransform:
   - {fileID: 1578270690}
   - {fileID: 855673872}
   - {fileID: 1926945194}
+  - {fileID: 2049857295}
   - {fileID: 1364444820}
   - {fileID: 1926400139}
   - {fileID: 1887961651}
+  - {fileID: 1597708655}
   - {fileID: 1950330925}
   - {fileID: 124643368}
-  - {fileID: 1597708655}
   - {fileID: 1161036247}
-  - {fileID: 2049857295}
   m_Father: {fileID: 1804806916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1760,7 +1767,7 @@ Prefab:
     - target: {fileID: 224184086583836168, guid: 63eea7d760bd48241a0a174687c9460d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224184086583836168, guid: 63eea7d760bd48241a0a174687c9460d,
         type: 2}
@@ -1826,6 +1833,10 @@ Prefab:
       propertyPath: m_Name
       value: Corpo1 (Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 1202292293888970, guid: 63eea7d760bd48241a0a174687c9460d, type: 2}
+      propertyPath: m_TagString
+      value: BodyEquipped
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63eea7d760bd48241a0a174687c9460d, type: 2}
   m_IsPrefabAsset: 0
@@ -1879,7 +1890,7 @@ Prefab:
     - target: {fileID: 224946120569902372, guid: 8f73202c071b95c4cab6ad3334a70bd7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224946120569902372, guid: 8f73202c071b95c4cab6ad3334a70bd7,
         type: 2}
@@ -2039,6 +2050,10 @@ Prefab:
       propertyPath: m_Name
       value: CabeloF1 (Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 1685342726099912, guid: 888d5e42108aa9b4aa82a27054ec9329, type: 2}
+      propertyPath: m_TagString
+      value: HairEquipped
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888d5e42108aa9b4aa82a27054ec9329, type: 2}
   m_IsPrefabAsset: 0
@@ -2078,7 +2093,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1277419481}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2771,7 +2786,7 @@ Prefab:
     - target: {fileID: 224287861677235520, guid: 056995ac44a13814a848f2a02a6840cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224287861677235520, guid: 056995ac44a13814a848f2a02a6840cf,
         type: 2}
@@ -2871,7 +2886,7 @@ Prefab:
     - target: {fileID: 224829794661186974, guid: 184f87bfc3c3a1a46b6c4011c3441943,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224829794661186974, guid: 184f87bfc3c3a1a46b6c4011c3441943,
         type: 2}

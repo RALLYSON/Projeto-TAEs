@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class EditCharacter : MonoBehaviour {
-    public Transform charInScene;
-    public Transform characterPrefab;
+    public GameObject charInScene;
     public GameObject grid;
     public GameObject slotPrefab;
 
@@ -18,6 +19,27 @@ public class EditCharacter : MonoBehaviour {
     List<Transform> slots;
     string lastSlot;
     [Space] [Space] public Image[] panelTypeImgs;
+
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("FirstEdit"))
+        {
+            PlayerPrefs.SetInt("FirstEdit", 1);
+            PlayerPrefs.Save();
+            StartSavingPlayer(charInScene);
+        }
+        else
+        {
+            LoadPlayer();
+        }
+
+        //pc debug
+        //
+        //PlayerPrefs.DeleteKey("FirstEdit");
+        //PlayerPrefs.Save();
+
+    }
+
 
     private void Start()
     {
@@ -111,26 +133,90 @@ public class EditCharacter : MonoBehaviour {
     }
 
 
+
     public void SaveAndExit(GameObject charInScene)
     {
-        //CharFullParts charFullParts = new CharFullParts();
+        StartSavingPlayer(charInScene);
+        
+        //back scene
+        ScreenFlow.Instance.LoadPreviousScene();
+    }
 
-        Transform[] children = charInScene.GetComponentsInChildren<Transform>();
+    void StartSavingPlayer(GameObject charInScene)
+    {
 
-        for (int i = 1; i < children.Length; i++) //begins with 1 to remove the parent
+        CharFullParts charFullParts = new CharFullParts();
+
+        int i = 0;
+        foreach (Transform child in charInScene.transform)
         {
-            //Save 
             CharPart charPart = new CharPart(
-                    //path
-                    children[i].GetComponent<ResourcePath>().resourcePath,
-                    children[i].localPosition,
-                    children[i].gameObject.activeSelf,
-                    i,
-                    children[i].gameObject.tag
-                );
-            //charFullParts.allCharParts.Add(charInScene);
-            print("HEREEE               " + children[i].GetComponent<ResourcePath>().resourcePath);
+                         child.GetComponent<ResourcePath>().resourcePath,
+                         child.localPosition.x,
+                         child.localPosition.y,
+                         child.gameObject.activeSelf,
+                         i,
+                         child.gameObject.tag
+                     );
+            charFullParts.allCharParts.Add(charPart);
+            i++;
         }
+        //SAVE
+        SavePlayer(charFullParts);
+    }
+
+    void SavePlayer(CharFullParts fullParts)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/player.fun";
+        FileStream fs = new FileStream(path, FileMode.Create);
+        formatter.Serialize(fs, fullParts);
+        fs.Close();
+    }
+
+    void LoadPlayer()
+    {
+        //delete old
+        foreach (Transform child in charInScene.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+
+
+        string path = Application.persistentDataPath + "/player.fun";
+        if(File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream fs = new FileStream(path, FileMode.Open);
+
+            CharFullParts fullParts = formatter.Deserialize(fs) as CharFullParts;
+
+        
+
+            //create new avatar
+
+            foreach(CharPart charPart in fullParts.allCharParts)
+            {
+                GameObject part = Resources.Load(charPart.prefabPath) as GameObject;
+                part.transform.SetParent(charInScene.transform);
+                Vector3 pos = new Vector3(charPart.rectPos[0], charPart.rectPos[1],0);
+                part.GetComponent<RectTransform>().localPosition = pos;
+                part.SetActive(charPart.isActive);
+                part.tag = charPart.tag;
+                part.transform.SetSiblingIndex(charPart.posAsChild);
+
+
+            }
+
+
+            fs.Close();
+
+        }
+
+
+      
+
 
     }
 

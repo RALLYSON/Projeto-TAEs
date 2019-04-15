@@ -9,32 +9,44 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1685342726099912}
+  m_RootGameObject: {fileID: 1032151210917826}
   m_IsPrefabAsset: 1
---- !u!1 &1685342726099912
+--- !u!1 &1032151210917826
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 224331106982077524}
-  - component: {fileID: 222266235794375912}
-  - component: {fileID: 114231475397036398}
-  - component: {fileID: 114927205935580778}
+  - component: {fileID: 224488265157853882}
+  - component: {fileID: 222773919840659352}
+  - component: {fileID: 114635035822439980}
+  - component: {fileID: 114444567469150332}
   m_Layer: 5
-  m_Name: CabeloF1
+  m_Name: CabeloM2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &114231475397036398
+--- !u!114 &114444567469150332
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685342726099912}
+  m_GameObject: {fileID: 1032151210917826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c4d39d55da4f4418bc13f42dd50b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcePath: Parts/CabeloM2
+--- !u!114 &114635035822439980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032151210917826}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -48,7 +60,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cc2342c3782c10340a36841003775ca2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd64c6d3051af174aa9e6a1010120a0c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -56,31 +68,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114927205935580778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685342726099912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c4d39d55da4f4418bc13f42dd50b7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourcePath: Parts/CabeloF1
---- !u!222 &222266235794375912
+--- !u!222 &222773919840659352
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685342726099912}
+  m_GameObject: {fileID: 1032151210917826}
   m_CullTransparentMesh: 0
---- !u!224 &224331106982077524
+--- !u!224 &224488265157853882
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1685342726099912}
+  m_GameObject: {fileID: 1032151210917826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -90,6 +90,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 83}
-  m_SizeDelta: {x: 396, y: 468}
+  m_AnchoredPosition: {x: 0, y: 236}
+  m_SizeDelta: {x: 355.5, y: 279}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -29,14 +29,14 @@ public class EditCharacter : MonoBehaviour {
             StartSavingPlayer(charInScene);
         }
         else
-        {
             LoadPlayer();
-        }
 
         //pc debug
-        //
-        //PlayerPrefs.DeleteKey("FirstEdit");
+
+        //PlayerPrefs.DeleteKey("FirstEdit"))
         //PlayerPrefs.Save();
+        //File.Delete(Application.persistentDataPath + "/player.fun");
+
 
     }
 
@@ -124,7 +124,6 @@ public class EditCharacter : MonoBehaviour {
             Vector3 pos = slot.GetComponent<RectTransform>().localPosition;
             pos.y = itemGroup.items[i].rectY;
             slot.GetComponent<RectTransform>().localPosition = pos;
-
             slot.SetSiblingIndex(itemGroup.items[i].layer); //muda a ordem na hierarquia
             slot.tag = itemGroup.type.ToString() + "Equipped";
             slot.gameObject.SetActive(true);
@@ -137,16 +136,12 @@ public class EditCharacter : MonoBehaviour {
     public void SaveAndExit(GameObject charInScene)
     {
         StartSavingPlayer(charInScene);
-        
-        //back scene
         ScreenFlow.Instance.LoadPreviousScene();
     }
 
     void StartSavingPlayer(GameObject charInScene)
     {
-
         CharFullParts charFullParts = new CharFullParts();
-
         int i = 0;
         foreach (Transform child in charInScene.transform)
         {
@@ -156,7 +151,7 @@ public class EditCharacter : MonoBehaviour {
                          child.localPosition.y,
                          child.gameObject.activeSelf,
                          i,
-                         child.gameObject.tag
+                         child.tag
                      );
             charFullParts.allCharParts.Add(charPart);
             i++;
@@ -181,45 +176,26 @@ public class EditCharacter : MonoBehaviour {
         {
             Destroy(child.gameObject);
         }
-
-
-
         string path = Application.persistentDataPath + "/player.fun";
         if(File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream fs = new FileStream(path, FileMode.Open);
-
             CharFullParts fullParts = formatter.Deserialize(fs) as CharFullParts;
 
-        
-
             //create new avatar
-
             foreach(CharPart charPart in fullParts.allCharParts)
             {
-                GameObject part = Resources.Load(charPart.prefabPath) as GameObject;
-                part.transform.SetParent(charInScene.transform);
-                Vector3 pos = new Vector3(charPart.rectPos[0], charPart.rectPos[1],0);
+                GameObject part = Instantiate(Resources.Load(charPart.prefabPath) as GameObject,charInScene.transform);
+                Vector3 pos = new Vector3(charPart.rectPos[0], charPart.rectPos[1], 0);
                 part.GetComponent<RectTransform>().localPosition = pos;
                 part.SetActive(charPart.isActive);
                 part.tag = charPart.tag;
                 part.transform.SetSiblingIndex(charPart.posAsChild);
-
-
             }
-
-
             fs.Close();
-
         }
-
-
-      
-
-
     }
-
 }
 
 

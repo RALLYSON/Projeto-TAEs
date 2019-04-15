@@ -18,7 +18,9 @@ public class ScreenFlow : MonoBehaviour
     public void Awake()
     {
         if (!Instance)
+        {
             Instance = this;
+        }
         else
             Debug.LogError("Há mais de 1 instancia de ScreenFlow");
 
@@ -26,6 +28,12 @@ public class ScreenFlow : MonoBehaviour
     }
 
     public void LoadNextScene(string sceneName)
+    {
+        AddScene(sceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void AddScene(string sceneName)
     {
         lastID++;
         scenes.Add(
@@ -35,7 +43,6 @@ public class ScreenFlow : MonoBehaviour
         bt.transform.GetChild(0).GetComponent<Text>().text = sceneName;
         bt.gameObject.name = sceneName;
         scenesBt.Add(bt);
-        SceneManager.LoadScene(sceneName);
     }
 
     public void LoadPreviousScene()

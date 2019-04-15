@@ -1,8 +1,9 @@
 ﻿public enum characterPosition
 {
         Body1 ,
-        HairM,
+        Body2,
+        HairM1,
+        HairM2,
         HairF1,
         HairF2,
-        Body2,
 };

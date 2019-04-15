@@ -484,8 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887197b0f247c594cac2a3a099833a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 1478721033881106, guid: aa4a02df9066f6e4ba4efc721a5280d5,
-    type: 2}
+  charInScene: {fileID: 386131482}
 --- !u!114 &386131485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +532,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Escolha Persona
+          m_StringArgument: EscolhaPersona
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1991,7 +1990,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Escolha Persona
+          m_StringArgument: EscolhaPersona
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

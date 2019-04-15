@@ -8,13 +8,27 @@ public class SplashScreen : MonoBehaviour
 
     void Start()
     {
+        //PC DEBUG
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
+        //
+
         if (!PlayerPrefs.HasKey("firstTime"))
         {
             PlayerPrefs.SetInt("firstTime", 1);
+            PlayerPrefs.Save();
             StartPlayerPrefs();
         }
         DontDestroyOnLoad(GameObject.Find("MainAudio"));
-        ScreenFlow.Instance.LoadNextScene("MainMenu");
+
+
+        if (!PlayerPrefs.HasKey("FirstEdit"))
+        {
+            ScreenFlow.Instance.AddScene("MainMenu");
+            ScreenFlow.Instance.LoadNextScene("EscolhaPersona");
+        }
+        else
+            ScreenFlow.Instance.LoadNextScene("MainMenu");
     }
 
     void StartPlayerPrefs()
